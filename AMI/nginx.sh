@@ -18,7 +18,7 @@ sudo mkdir /etc/ssl/private
 sudo chmod 700 /etc/ssl/private
 
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/IML.key -out /etc/ssl/certs/IML.crt \
--subj "/C=UK/ST=London/L=London/O=darey.io/OU=devops/CN=$(curl -s ip-172-31-81-43.ec2.internal)"
+-subj "/C=UK/ST=London/L=London/O=darey.io/OU=devops/CN=$(curl -s http://172-31-89-84.ec2.internal)"
 
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
