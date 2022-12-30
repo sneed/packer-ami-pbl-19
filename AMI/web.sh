@@ -33,7 +33,7 @@ source ~/.bash_profile
 sudo yum install -y mod_ssl
 
 sudo openssl req -newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/IML.key -x509 -days 365 -out /etc/pki/tls/certs/IML.crt \
--subj "/C=UK/ST=London/L=London/O=darey.io/OU=devops/CN=$(curl -s ip-172-31-81-43.ec2.internal)"
+-subj "/C=UK/ST=London/L=London/O=darey.io/OU=devops/CN=$(curl -s http://172-31-89-84.ec2.internal)"
 
 
 sudo sed -i 's/localhost.crt/IML.crt/g'  /etc/httpd/conf.d/ssl.conf
